@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": [
+    "core/**/*.ts",
+    "intake/**/*.ts",
+    "pipeline/**/*.ts",
+    "rules/**/*.ts",
+    "plan/**/*.ts",
+    "loop/**/*.ts",
+    "cli/**/*.ts",
+    "templates/site/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "clients",
+    "templates/site/components",
+    "templates/site/next-boilerplate"
+  ]
+}

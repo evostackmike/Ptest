@@ -1,0 +1,6 @@
+node_modules/
+*.db
+*.db-journal
+clients/*/site/node_modules/
+clients/*/site/.next/
+.DS_Store

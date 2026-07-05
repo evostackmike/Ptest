@@ -1,0 +1,21 @@
+{
+  "name": "seo-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Client-agnostic closed-loop local-SEO engine. See docs/engine-build-spec.md.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "engine": "tsx cli/engine.ts"
+  },
+  "dependencies": {
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
