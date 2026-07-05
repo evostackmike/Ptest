@@ -1,0 +1,70 @@
+{
+  "cell": { "town": "pullman-wa", "cluster": "ev" },
+  "query": "ev charger installation pullman wa",
+  "capturedAt": "2026-06-21T09:40:00Z",
+  "furniture": { "lsaPresent": false, "adsCount": 1, "directoryStacked": true },
+  "pack": [
+    {
+      "businessId": "b-artizan-electric",
+      "name": "Artizan Electric & Plumbing",
+      "websiteUrl": "https://artizanelectric.com",
+      "address": "1235 SE Latah St, Pullman, WA 99163",
+      "reviewCount": 54,
+      "rating": 4.9,
+      "distanceMiles": 1.1,
+      "primaryCategory": "Electrician",
+      "siteDepth": 8,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 51 },
+        { "observedAt": "2026-06-06", "reviewCount": 52 },
+        { "observedAt": "2026-06-13", "reviewCount": 53 },
+        { "observedAt": "2026-06-20", "reviewCount": 54 }
+      ]
+    },
+    {
+      "businessId": "b-cheetah-electric",
+      "name": "Cheetah Electric",
+      "websiteUrl": "https://cheetahelectric.com",
+      "address": "213 N Main St, Moscow, ID 83843",
+      "reviewCount": 258,
+      "rating": 4.9,
+      "distanceMiles": 8.4,
+      "primaryCategory": "Electrician",
+      "siteDepth": 15,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 250 },
+        { "observedAt": "2026-06-06", "reviewCount": 253 },
+        { "observedAt": "2026-06-13", "reviewCount": 255 },
+        { "observedAt": "2026-06-20", "reviewCount": 258 }
+      ]
+    },
+    {
+      "businessId": "b-ecnw",
+      "name": "Electrical Contractors NW",
+      "websiteUrl": "https://ecnwinc.com",
+      "address": "505 SE Riverview St Suite F, Pullman, WA 99163",
+      "reviewCount": 10,
+      "rating": 5.0,
+      "distanceMiles": 0.7,
+      "primaryCategory": "Electrician",
+      "siteDepth": 2,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 10 },
+        { "observedAt": "2026-06-20", "reviewCount": 10 }
+      ]
+    }
+  ],
+  "organic": [
+    { "businessId": null, "url": "https://www.yelp.com/search?find_desc=ev+charger+installation&find_loc=Pullman%2C+WA", "name": null },
+    { "businessId": "b-cheetah-electric", "url": "https://cheetahelectric.com/electrical-services/ev-charger-installation/", "name": "Cheetah Electric" },
+    { "businessId": null, "url": "https://www.qmerit.com/ev-charger-installation/washington", "name": null },
+    { "businessId": "b-artizan-electric", "url": "https://artizanelectric.com", "name": "Artizan Electric & Plumbing" },
+    { "businessId": null, "url": "https://www.angi.com/companylist/pullman-wa/ev-charger-installation.htm", "name": null },
+    { "businessId": "b-wireworks-electric", "url": "https://wireworksidaho.com", "name": "Wireworks Electric", "address": "875 Lenville Rd, Moscow, ID 83843", "reviewCount": 34, "rating": 4.9, "distanceMiles": 10.3, "primaryCategory": "Electrician", "siteDepth": 1, "hasLocalBusinessSchema": false },
+    { "businessId": null, "url": "https://www.homeadvisor.com/c.Electrical.Pullman.WA.-12040.html", "name": null },
+    { "businessId": null, "url": "https://www.bbb.org/us/wa/pullman/category/ev-charger-installation", "name": null }
+  ]
+}

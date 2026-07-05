@@ -1,0 +1,85 @@
+{
+  "cell": { "town": "moscow-id", "cluster": "panel" },
+  "query": "electrical panel upgrades moscow id",
+  "capturedAt": "2026-06-20T17:05:00Z",
+  "furniture": { "lsaPresent": false, "adsCount": 1, "directoryStacked": false },
+  "pack": [
+    {
+      "businessId": "b-cheetah-electric",
+      "name": "Cheetah Electric",
+      "websiteUrl": "https://cheetahelectric.com",
+      "address": "213 N Main St, Moscow, ID 83843",
+      "reviewCount": 258,
+      "rating": 4.9,
+      "distanceMiles": 0.8,
+      "primaryCategory": "Electrician",
+      "siteDepth": 15,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 250 },
+        { "observedAt": "2026-06-06", "reviewCount": 253 },
+        { "observedAt": "2026-06-13", "reviewCount": 255 },
+        { "observedAt": "2026-06-20", "reviewCount": 258 }
+      ]
+    },
+    {
+      "businessId": "b-mountain-city-electric",
+      "name": "Mountain City Electric",
+      "websiteUrl": "https://mtncityelectric.com",
+      "address": "1120 Eid Rd, Moscow, ID 83843",
+      "reviewCount": 27,
+      "rating": 5.0,
+      "distanceMiles": 2.6,
+      "primaryCategory": "Electrician",
+      "siteDepth": 7,
+      "hasLocalBusinessSchema": null,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 26 },
+        { "observedAt": "2026-06-13", "reviewCount": 27 },
+        { "observedAt": "2026-06-20", "reviewCount": 27 }
+      ]
+    },
+    {
+      "businessId": "b-wireworks-electric",
+      "name": "Wireworks Electric",
+      "websiteUrl": "https://wireworksidaho.com",
+      "address": "875 Lenville Rd, Moscow, ID 83843",
+      "reviewCount": 34,
+      "rating": 4.9,
+      "distanceMiles": 3.1,
+      "primaryCategory": "Electrician",
+      "siteDepth": 1,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 33 },
+        { "observedAt": "2026-06-13", "reviewCount": 34 }
+      ]
+    }
+  ],
+  "organic": [
+    { "businessId": "b-cheetah-electric", "url": "https://cheetahelectric.com/panel-upgrades-moscow/", "name": "Cheetah Electric" },
+    { "businessId": null, "url": "https://homeguide.com/costs/electrical-panel-upgrade-cost", "name": null },
+    { "businessId": "b-mountain-city-electric", "url": "https://mtncityelectric.com/master-electrician-moscow-idaho/", "name": "Mountain City Electric" },
+    { "businessId": "b-gropp-heating-air-electric", "url": "https://groppllc.com/city/moscow-id/", "name": "Gropp Heating Air & Electric", "address": "1650 White Ave, Moscow, ID 83843", "reviewCount": 60, "rating": 4.6, "distanceMiles": 1.4, "primaryCategory": "Heating contractor", "siteDepth": 10, "hasLocalBusinessSchema": true },
+    { "businessId": null, "url": "https://www.yelp.com/search?find_desc=panel+upgrade&find_loc=Moscow%2C+ID", "name": null },
+    {
+      "businessId": "b-artizan-electric",
+      "url": "https://artizanelectric.com",
+      "name": "Artizan Electric & Plumbing",
+      "address": "1235 SE Latah St, Pullman, WA 99163",
+      "reviewCount": 54,
+      "rating": 4.9,
+      "distanceMiles": 7.9,
+      "primaryCategory": "Electrician",
+      "siteDepth": 8,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 51 },
+        { "observedAt": "2026-06-06", "reviewCount": 52 },
+        { "observedAt": "2026-06-13", "reviewCount": 53 },
+        { "observedAt": "2026-06-20", "reviewCount": 54 }
+      ]
+    },
+    { "businessId": null, "url": "https://www.angi.com/companylist/moscow-id/electrical-panel-upgrade.htm", "name": null }
+  ]
+}

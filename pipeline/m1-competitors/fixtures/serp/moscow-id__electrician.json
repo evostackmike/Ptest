@@ -1,0 +1,116 @@
+{
+  "cell": { "town": "moscow-id", "cluster": "electrician" },
+  "query": "electrician moscow id",
+  "capturedAt": "2026-06-20T17:00:00Z",
+  "furniture": { "lsaPresent": true, "adsCount": 2, "directoryStacked": false },
+  "pack": [
+    {
+      "businessId": "b-cheetah-electric",
+      "name": "Cheetah Electric",
+      "websiteUrl": "https://cheetahelectric.com",
+      "address": "213 N Main St, Moscow, ID 83843",
+      "reviewCount": 258,
+      "rating": 4.9,
+      "distanceMiles": 0.8,
+      "primaryCategory": "Electrician",
+      "siteDepth": 15,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 250 },
+        { "observedAt": "2026-06-06", "reviewCount": 253 },
+        { "observedAt": "2026-06-13", "reviewCount": 255 },
+        { "observedAt": "2026-06-20", "reviewCount": 258 }
+      ]
+    },
+    {
+      "businessId": "b-gropp-heating-air-electric",
+      "name": "Gropp Heating Air & Electric",
+      "websiteUrl": "https://groppllc.com",
+      "address": "1650 White Ave, Moscow, ID 83843",
+      "reviewCount": 60,
+      "rating": 4.6,
+      "distanceMiles": 1.4,
+      "primaryCategory": "Heating contractor",
+      "siteDepth": 10,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 57 },
+        { "observedAt": "2026-06-06", "reviewCount": 58 },
+        { "observedAt": "2026-06-13", "reviewCount": 59 },
+        { "observedAt": "2026-06-20", "reviewCount": 60 }
+      ]
+    },
+    {
+      "businessId": "b-wireworks-electric",
+      "name": "Wireworks Electric",
+      "websiteUrl": "https://wireworksidaho.com",
+      "address": "875 Lenville Rd, Moscow, ID 83843",
+      "reviewCount": 34,
+      "rating": 4.9,
+      "distanceMiles": 3.1,
+      "primaryCategory": "Electrician",
+      "siteDepth": 1,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 33 },
+        { "observedAt": "2026-06-06", "reviewCount": 33 },
+        { "observedAt": "2026-06-13", "reviewCount": 34 },
+        { "observedAt": "2026-06-20", "reviewCount": 34 }
+      ]
+    }
+  ],
+  "organic": [
+    { "businessId": "b-cheetah-electric", "url": "https://cheetahelectric.com/service-areas/moscow-id-electrician/", "name": "Cheetah Electric" },
+    { "businessId": null, "url": "https://www.yelp.com/search?find_desc=electrician&find_loc=Moscow%2C+ID", "name": null },
+    { "businessId": "b-gropp-heating-air-electric", "url": "https://groppllc.com/city/moscow-id/", "name": "Gropp Heating Air & Electric" },
+    { "businessId": null, "url": "https://www.angi.com/companylist/moscow-id/electrician.htm", "name": null },
+    {
+      "businessId": "b-omega-electric",
+      "url": "https://theomegaelectric.com",
+      "name": "Omega Electric",
+      "address": "310 W Whitman St, Palouse, WA 99161",
+      "reviewCount": 15,
+      "rating": 4.6,
+      "distanceMiles": 16.2,
+      "primaryCategory": "Electrician",
+      "siteDepth": 4,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 15 },
+        { "observedAt": "2026-06-20", "reviewCount": 15 }
+      ]
+    },
+    { "businessId": "b-wireworks-electric", "url": "https://wireworksidaho.com", "name": "Wireworks Electric" },
+    {
+      "businessId": "b-mountain-city-electric",
+      "url": "https://mtncityelectric.com/master-electrician-moscow-idaho/",
+      "name": "Mountain City Electric",
+      "address": "1120 Eid Rd, Moscow, ID 83843",
+      "reviewCount": 27,
+      "rating": 5.0,
+      "distanceMiles": 2.6,
+      "primaryCategory": "Electrician",
+      "siteDepth": 7,
+      "hasLocalBusinessSchema": null,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 26 },
+        { "observedAt": "2026-06-13", "reviewCount": 27 },
+        { "observedAt": "2026-06-20", "reviewCount": 27 }
+      ]
+    },
+    { "businessId": null, "url": "https://www.expertise.com/id/moscow/electricians", "name": null },
+    {
+      "businessId": "b-crescent-electric-supply",
+      "url": "https://www.cesco.com",
+      "name": "Crescent Electric Supply Co.",
+      "address": "3906 N Sullivan Rd, Spokane Valley, WA 99216",
+      "reviewCount": 21,
+      "rating": 4.2,
+      "distanceMiles": 78.0,
+      "primaryCategory": "Electrical supply store",
+      "siteDepth": 40,
+      "hasLocalBusinessSchema": true
+    },
+    { "businessId": null, "url": "https://www.bbb.org/us/id/moscow/category/electrician", "name": null }
+  ]
+}

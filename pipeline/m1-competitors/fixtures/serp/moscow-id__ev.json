@@ -1,0 +1,79 @@
+{
+  "cell": { "town": "moscow-id", "cluster": "ev" },
+  "query": "ev charger installation moscow id",
+  "capturedAt": "2026-06-20T17:10:00Z",
+  "furniture": { "lsaPresent": false, "adsCount": 0, "directoryStacked": true },
+  "pack": [
+    {
+      "businessId": "b-cheetah-electric",
+      "name": "Cheetah Electric",
+      "websiteUrl": "https://cheetahelectric.com",
+      "address": "213 N Main St, Moscow, ID 83843",
+      "reviewCount": 258,
+      "rating": 4.9,
+      "distanceMiles": 0.8,
+      "primaryCategory": "Electrician",
+      "siteDepth": 15,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 250 },
+        { "observedAt": "2026-06-06", "reviewCount": 253 },
+        { "observedAt": "2026-06-13", "reviewCount": 255 },
+        { "observedAt": "2026-06-20", "reviewCount": 258 }
+      ]
+    },
+    {
+      "businessId": "b-charge-home-solutions",
+      "name": "Charge Home Solutions",
+      "websiteUrl": "https://chargehomesolutions.com",
+      "address": "2418 S Blaine St, Moscow, ID 83843",
+      "reviewCount": 19,
+      "rating": 5.0,
+      "distanceMiles": 5.5,
+      "primaryCategory": "Electric vehicle charging station contractor",
+      "siteDepth": 5,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 18 },
+        { "observedAt": "2026-06-13", "reviewCount": 19 }
+      ]
+    },
+    {
+      "businessId": "b-wireworks-electric",
+      "name": "Wireworks Electric",
+      "websiteUrl": "https://wireworksidaho.com",
+      "address": "875 Lenville Rd, Moscow, ID 83843",
+      "reviewCount": 34,
+      "rating": 4.9,
+      "distanceMiles": 3.1,
+      "primaryCategory": "Electrician",
+      "siteDepth": 1,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 33 },
+        { "observedAt": "2026-06-13", "reviewCount": 34 }
+      ]
+    }
+  ],
+  "organic": [
+    { "businessId": null, "url": "https://www.yelp.com/search?find_desc=ev+charger+installation&find_loc=Moscow%2C+ID", "name": null },
+    { "businessId": null, "url": "https://www.angi.com/companylist/moscow-id/ev-charger-installation.htm", "name": null },
+    { "businessId": "b-cheetah-electric", "url": "https://cheetahelectric.com/electrical-services/ev-charger-installation/", "name": "Cheetah Electric" },
+    { "businessId": null, "url": "https://www.homeadvisor.com/c.Electrical.Moscow.ID.-12040.html", "name": null },
+    { "businessId": "b-wireworks-electric", "url": "https://wireworksidaho.com", "name": "Wireworks Electric" },
+    { "businessId": null, "url": "https://www.qmerit.com/ev-charger-installation/idaho", "name": null },
+    {
+      "businessId": "b-omega-electric",
+      "url": "https://theomegaelectric.com",
+      "name": "Omega Electric",
+      "address": "310 W Whitman St, Palouse, WA 99161",
+      "reviewCount": 15,
+      "rating": 4.6,
+      "distanceMiles": 16.2,
+      "primaryCategory": "Electrician",
+      "siteDepth": 4,
+      "hasLocalBusinessSchema": false
+    },
+    { "businessId": null, "url": "https://www.bbb.org/us/id/moscow/category/ev-charger-installation", "name": null }
+  ]
+}

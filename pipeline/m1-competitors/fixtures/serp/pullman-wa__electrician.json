@@ -1,0 +1,100 @@
+{
+  "cell": { "town": "pullman-wa", "cluster": "electrician" },
+  "query": "electrician pullman wa",
+  "capturedAt": "2026-06-21T09:30:00Z",
+  "furniture": { "lsaPresent": true, "adsCount": 1, "directoryStacked": false },
+  "pack": [
+    {
+      "businessId": "b-artizan-electric",
+      "name": "Artizan Electric & Plumbing",
+      "websiteUrl": "https://artizanelectric.com",
+      "address": "1235 SE Latah St, Pullman, WA 99163",
+      "reviewCount": 54,
+      "rating": 4.9,
+      "distanceMiles": 1.1,
+      "primaryCategory": "Electrician",
+      "siteDepth": 8,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 51 },
+        { "observedAt": "2026-06-06", "reviewCount": 52 },
+        { "observedAt": "2026-06-13", "reviewCount": 53 },
+        { "observedAt": "2026-06-20", "reviewCount": 54 }
+      ]
+    },
+    {
+      "businessId": "b-pullman-heating-electric",
+      "name": "Pullman Heating & Electric",
+      "websiteUrl": "https://pullmanheating.com",
+      "address": "345 SE Paradise St, Pullman, WA 99163",
+      "reviewCount": 9,
+      "rating": 4.7,
+      "distanceMiles": 0.9,
+      "primaryCategory": "Heating contractor",
+      "siteDepth": 4,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 9 },
+        { "observedAt": "2026-06-20", "reviewCount": 9 }
+      ]
+    },
+    {
+      "businessId": "b-pullman-best-electrician-pros",
+      "name": "Pullman Best Electrician Pros",
+      "websiteUrl": null,
+      "address": "PO Box 141, Pullman, WA 99163",
+      "reviewCount": 48,
+      "rating": 5.0,
+      "distanceMiles": 0.4,
+      "primaryCategory": "Electrician",
+      "siteDepth": null,
+      "hasLocalBusinessSchema": null,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 4 },
+        { "observedAt": "2026-06-06", "reviewCount": 5 },
+        { "observedAt": "2026-06-13", "reviewCount": 6 },
+        { "observedAt": "2026-06-20", "reviewCount": 48 }
+      ]
+    }
+  ],
+  "organic": [
+    { "businessId": "b-artizan-electric", "url": "https://artizanelectric.com", "name": "Artizan Electric & Plumbing" },
+    { "businessId": "b-cheetah-electric", "url": "https://cheetahelectric.com/service-areas/pullman-wa-electrician/", "name": "Cheetah Electric", "address": "213 N Main St, Moscow, ID 83843", "reviewCount": 258, "rating": 4.9, "distanceMiles": 8.4, "primaryCategory": "Electrician", "siteDepth": 15, "hasLocalBusinessSchema": true },
+    { "businessId": null, "url": "https://www.yelp.com/search?find_desc=electrician&find_loc=Pullman%2C+WA", "name": null },
+    {
+      "businessId": "b-ecnw",
+      "name": "Electrical Contractors NW",
+      "url": "https://ecnwinc.com",
+      "address": "505 SE Riverview St Suite F, Pullman, WA 99163",
+      "reviewCount": 10,
+      "rating": 5.0,
+      "distanceMiles": 0.7,
+      "primaryCategory": "Electrician",
+      "siteDepth": 2,
+      "hasLocalBusinessSchema": false,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 10 },
+        { "observedAt": "2026-06-20", "reviewCount": 10 }
+      ]
+    },
+    { "businessId": "b-pullman-heating-electric", "url": "https://pullmanheating.com", "name": "Pullman Heating & Electric" },
+    { "businessId": null, "url": "https://www.angi.com/companylist/pullman-wa/electrician.htm", "name": null },
+    {
+      "businessId": "b-crescent-electric",
+      "name": "Crescent Electric",
+      "url": "https://crescentelectricservices.com/locations/pullman-wa",
+      "address": "Moscow, ID 83843",
+      "reviewCount": 3,
+      "rating": 5.0,
+      "distanceMiles": 8.1,
+      "primaryCategory": "Electrician",
+      "siteDepth": 9,
+      "hasLocalBusinessSchema": true,
+      "reviewHistory": [
+        { "observedAt": "2026-05-30", "reviewCount": 2 },
+        { "observedAt": "2026-06-20", "reviewCount": 3 }
+      ]
+    },
+    { "businessId": null, "url": "https://www.bbb.org/us/wa/pullman/category/electrician", "name": null }
+  ]
+}
