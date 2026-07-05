@@ -52,7 +52,7 @@ const BAND_ORDER: ProbabilityBand[] = [BAND_VERY_LOW, BAND_LOW, BAND_MEDIUM, BAN
 /** One-notch band discount (LSA-heavy pack, directory-stacked organic). */
 function discountBand(band: ProbabilityBand): ProbabilityBand {
   const i = BAND_ORDER.findIndex((b) => b.label === band.label);
-  return BAND_ORDER[Math.max(0, i - 1)];
+  return BAND_ORDER[Math.max(0, i - 1)] ?? BAND_VERY_LOW;
 }
 
 /** Review gap at or below this ratio counts as "small" for TTW bucketing. */
@@ -326,7 +326,13 @@ function demandFor(cell: Cell, keywordMap: KeywordMap): DemandCheck {
   const results: GuardrailResult[] = entries.map((e) => g5DemandGate(e));
   const pass = results.find((r) => r.ok);
   if (pass) return { ok: true, reason: pass.reason };
-  return { ok: false, reason: results[0].reason };
+  const first = results[0];
+  return {
+    ok: false,
+    reason: first
+      ? first.reason
+      : `G5 fires: no demand evidence for ${cell.town}×${cell.cluster}`,
+  };
 }
 
 /**
@@ -352,7 +358,8 @@ export function resolveClientReviewCount(
 function medianOf(values: number[]): number {
   const sorted = [...values].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
-  return sorted.length % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+  if (sorted.length % 2 === 1) return sorted[mid] ?? 0;
+  return ((sorted[mid - 1] ?? 0) + (sorted[mid] ?? 0)) / 2;
 }
 
 /**

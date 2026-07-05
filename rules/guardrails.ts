@@ -174,7 +174,8 @@ export function g3ReviewRealism(
 function medianOf(values: number[]): number {
   const sorted = [...values].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
-  return sorted.length % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+  if (sorted.length % 2 === 1) return sorted[mid] ?? 0;
+  return ((sorted[mid - 1] ?? 0) + (sorted[mid] ?? 0)) / 2;
 }
 
 // ---------------------------------------------------------------------------
@@ -399,10 +400,13 @@ export const G14_PUBLISH_RAMP: readonly { maxDomainAgeMonths: number; pagesPerWe
   { maxDomainAgeMonths: Number.POSITIVE_INFINITY, pagesPerWeekCap: 10 },
 ];
 
+/** Cap applied when no ramp row matches (unreachable: the last row is open-ended). */
+export const G14_FALLBACK_CAP = 10;
+
 /** Resolve the applicable pages-per-week cap for a domain age. */
 export function g14CapFor(domainAgeMonths: number): number {
   const row = G14_PUBLISH_RAMP.find((r) => domainAgeMonths < r.maxDomainAgeMonths);
-  return (row ?? G14_PUBLISH_RAMP[G14_PUBLISH_RAMP.length - 1]).pagesPerWeekCap;
+  return row?.pagesPerWeekCap ?? G14_FALLBACK_CAP;
 }
 
 /** G14 — publish-pacing cap for the domain's age band. */
@@ -440,12 +444,12 @@ export function g15Licensing(townState: string, licenses: License[]): GuardrailR
       reason: `G15 fires: town state is unknown — fail closed until the manifest resolves it`,
     };
   }
-  const covering = licenses.filter((l) => l.state.trim().toUpperCase() === state);
-  if (covering.length > 0) {
+  const covering = licenses.find((l) => l.state.trim().toUpperCase() === state);
+  if (covering) {
     return {
       ok: true,
       ruleId: "G15",
-      reason: `G15 passes: ${state} covered by license ${covering[0].type} #${covering[0].number}`,
+      reason: `G15 passes: ${state} covered by license ${covering.type} #${covering.number}`,
     };
   }
   return {

@@ -23,8 +23,8 @@ export const MIN_INFO_GAIN = 3;
 const PROPER = "[A-Z][A-Za-z'&.\\-]+";
 /**
  * Multi-word capitalized sequences, optionally joined by of/the ("City of
- * Moscow" style). "and"/"&" are NOT joiners — a coordination is two mentions,
- * not one entity. Joined by spaces/tabs only — never spans a line break.
+ * Springfield" style). "and"/"&" are NOT joiners — a coordination is two
+ * mentions, not one entity. Joined by spaces/tabs only — never spans a line break.
  */
 const ENTITY_RE = new RegExp(
   `${PROPER}(?:[ \\t]+(?:of|the)[ \\t]+${PROPER}|[ \\t]+${PROPER})+`,

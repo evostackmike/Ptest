@@ -78,10 +78,14 @@ function applyIgnorePatterns(text: string, patterns: string[]): string {
 
 function protectedByConfig(phrase: string, config: QaConfig): boolean {
   const hay = phrase.toLowerCase();
-  return (
-    config.brandTerms.some((t) => hay.includes(t.toLowerCase())) ||
-    config.vocabAllow.some((t) => hay.includes(t.toLowerCase()))
-  );
+  const hayWords = new Set(hay.split(/\s+/));
+  const covers = (term: string): boolean => {
+    const t = term.toLowerCase();
+    // The phrase contains the whole term, or shares a word with a multi-word
+    // term (so the single word "acme" is covered by brand term "Acme Wiring").
+    return hay.includes(t) || t.split(/\s+/).some((w) => hayWords.has(w));
+  };
+  return config.brandTerms.some(covers) || config.vocabAllow.some(covers);
 }
 
 export function copyQa(page: PageContent, config: QaConfig): QaFailure[] {

@@ -18,12 +18,11 @@ import { g15Licensing } from "../../rules/guardrails.js";
  * Returns null when neither yields a two-letter code (caller fails closed).
  */
 export function townState(town: Town): string | null {
-  const slugParts = town.slug.split("-");
-  const slugTail = slugParts[slugParts.length - 1];
+  const slugTail = town.slug.split("-").at(-1) ?? "";
   if (/^[a-z]{2}$/i.test(slugTail)) return slugTail.toUpperCase();
 
-  const nameMatch = town.name.match(/,\s*([A-Za-z]{2})\s*$/);
-  if (nameMatch) return nameMatch[1].toUpperCase();
+  const nameTail = town.name.match(/,\s*([A-Za-z]{2})\s*$/)?.[1];
+  if (nameTail) return nameTail.toUpperCase();
 
   return null;
 }

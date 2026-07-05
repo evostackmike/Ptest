@@ -50,8 +50,8 @@ describe("claimSubstantiation — regulatory/local-factual claims (permit/code/u
     const ctx = makeContext({ page: archPage("/services/generator/troy-id") });
     const failures = claimSubstantiation(page, ctx);
     expect(failures.length).toBe(1);
-    expect(failures[0].message).toContain(sentence);
-    expect(failures[0].message).toContain("write around the topic");
+    expect(failures[0]!.message).toContain(sentence);
+    expect(failures[0]!.message).toContain("write around the topic");
   });
 
   it("passes a permit-fee claim that resolves to an in-scope local_facts entry", () => {
@@ -70,7 +70,7 @@ describe("claimSubstantiation — regulatory/local-factual claims (permit/code/u
     const ctx = makeContext({ page: archPage("/services/panel-upgrades/lewiston-id") });
     const failures = claimSubstantiation(page, ctx);
     expect(failures.length).toBe(1);
-    expect(failures[0].message).toContain("does not resolve");
+    expect(failures[0]!.message).toContain("does not resolve");
   });
 });
 
@@ -120,8 +120,8 @@ describe("claimSubstantiation — DEGRADED tier proof-dependent claims", () => {
     const ctx = makeContext({ page: archPage("/locations/palouse-wa", "DEGRADED") });
     const failures = claimSubstantiation(page, ctx);
     expect(failures.length).toBe(1);
-    expect(failures[0].message).toContain("DEGRADED");
-    expect(failures[0].message).toContain(body);
+    expect(failures[0]!.message).toContain("DEGRADED");
+    expect(failures[0]!.message).toContain(body);
   });
 
   it("allows the same sentence on a FULL-tier page (proof exists)", () => {

@@ -117,7 +117,7 @@ describe("scoreCells — spec §4-M4 acceptance", () => {
       clusters: [
         {
           clusterId: "panel",
-          keywords: keywordMap.clusters[0].keywords.filter((k) => k.town !== "colfax-wa"),
+          keywords: (keywordMap.clusters[0]?.keywords ?? []).filter((k) => k.town !== "colfax-wa"),
         },
       ],
       skipped: keywordMap.skipped,

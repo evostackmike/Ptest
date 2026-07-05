@@ -29,14 +29,14 @@ describe("boilerplateRatio — regression proof on the reference client's REAL l
     (url, page) => {
       const failures = boilerplateRatio(page, contextFor(url), config);
       expect(failures.length).toBe(1);
-      expect(failures[0].gate).toBe("boilerplate-ratio");
-      expect(failures[0].message).toMatch(/shared-text ratio 0\.\d+ exceeds cap/);
+      expect(failures[0]!.gate).toBe("boilerplate-ratio");
+      expect(failures[0]!.message).toMatch(/shared-text ratio 0\.\d+ exceeds cap/);
     }
   );
 
   it("locale-token normalization drives the detection: town-swapped copy counts as shared", () => {
     const pages = crescentPages();
-    const page = pages[0];
+    const page = pages[0]!;
     const ctx = contextFor(page.url);
     const ratio = computeBoilerplateRatio(page, ctx);
     // Real templated pages sit far above the cap...
@@ -63,7 +63,7 @@ describe("boilerplateRatio — regression proof on the reference client's REAL l
   });
 
   it("excludes the page itself when it appears in the sibling list", () => {
-    const page = crescentPages()[0];
+    const page = crescentPages()[0]!;
     const ctx = makeContext({ page: archPage(page.url), siblings: [page] });
     // Identical-to-self must not count as boilerplate.
     expect(boilerplateRatio(page, ctx, config)).toEqual([]);

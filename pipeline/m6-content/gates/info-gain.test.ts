@@ -19,8 +19,8 @@ describe("infoGain — regression proof on the reference client's REAL location 
       });
       const failures = infoGain(page, ctx);
       expect(failures.length).toBe(1);
-      expect(failures[0].gate).toBe("info-gain");
-      expect(failures[0].message).toContain(`need ≥${MIN_INFO_GAIN}`);
+      expect(failures[0]!.gate).toBe("info-gain");
+      expect(failures[0]!.message).toContain(`need ≥${MIN_INFO_GAIN}`);
     }
   );
 
@@ -71,7 +71,7 @@ describe("infoGain — unit extraction and discounting", () => {
     });
     const failures = infoGain(branded, ctx);
     expect(failures.length).toBe(1);
-    expect(failures[0].message).toContain("0 unique local info unit(s)");
+    expect(failures[0]!.message).toContain("0 unique local info unit(s)");
   });
 
   it("discounts units repeated across ≥2 siblings as template furniture", () => {
@@ -85,11 +85,11 @@ describe("infoGain — unit extraction and discounting", () => {
     });
     const failures = infoGain(page, ctx);
     expect(failures.length).toBe(1);
-    expect(failures[0].message).not.toContain("Grange Hall");
+    expect(failures[0]!.message).not.toContain("Grange Hall");
   });
 
   it("passes vacuously when no incumbent texts are injected (V05 tightening)", () => {
-    const page = crescentPages()[0];
+    const page = crescentPages()[0]!;
     const ctx = makeContext({ page: archPage(page.url), incumbentTexts: [] });
     expect(infoGain(page, ctx)).toEqual([]);
   });
