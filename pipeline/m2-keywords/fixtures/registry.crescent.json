@@ -1,0 +1,168 @@
+{
+  "businesses": [
+    {
+      "businessId": "b-swift-electric",
+      "name": "Swift Electric",
+      "websiteUrl": "https://swift-electric.test",
+      "nameKeywords": [],
+      "siteDepth": 24,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "pullman-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 1,
+          "reviewCount": 258,
+          "rating": 4.7,
+          "distanceMiles": 3.1,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-palouse-pro",
+      "name": "Palouse Pro Wiring",
+      "websiteUrl": "https://palouse-pro.test",
+      "nameKeywords": [],
+      "siteDepth": 12,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "pullman-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 2,
+          "reviewCount": 61,
+          "rating": 4.9,
+          "distanceMiles": 1.9,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "cell": { "town": "pullman-wa", "cluster": "panel" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": ["b-swift-electric", "b-palouse-pro", "b-ampd"],
+      "organicTop10": [
+        "https://swift-electric.test/panel-upgrades",
+        "https://palouse-pro.test/services/panels",
+        "https://www.yelp.com/search?find_desc=panel+upgrade+pullman",
+        "https://ampd-electric.test/panel",
+        "https://www.angi.com/companylist/pullman/electrical.htm",
+        "https://gridline-electric.test/pullman-panels",
+        "https://voltway.test/services/panel-upgrade",
+        "https://www.homeadvisor.com/c.Electrical.Pullman.WA.html",
+        "https://moscowelectric.test/panel-upgrades-pullman",
+        "https://palouse-power.test/panel"
+      ],
+      "furniture": { "lsaPresent": true, "adsCount": 2, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "moscow-id", "cluster": "panel" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": ["b-swift-electric", "b-moscow-sparks", "b-palouse-pro"],
+      "organicTop10": [
+        "https://moscowelectric.test/panel-upgrades",
+        "https://swift-electric.test/moscow-panel",
+        "https://www.yelp.com/search?find_desc=panel+upgrade+moscow",
+        "https://palouse-pro.test/moscow",
+        "https://gridline-electric.test/moscow-panels",
+        "https://www.thumbtack.com/id/moscow/electrical",
+        "https://voltway.test/moscow",
+        "https://www.angi.com/companylist/moscow/electrical.htm",
+        "https://idaho-current.test/panel",
+        "https://palouse-power.test/moscow-panel"
+      ],
+      "furniture": { "lsaPresent": false, "adsCount": 1, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "colfax-wa", "cluster": "panel" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": ["b-swift-electric", "b-gridline", "b-voltway"],
+      "organicTop10": [
+        "https://swift-electric.test/colfax",
+        "https://gridline-electric.test/colfax-panels",
+        "https://www.yelp.com/search?find_desc=panel+upgrade+colfax",
+        "https://voltway.test/colfax",
+        "https://www.homeadvisor.com/c.Electrical.Colfax.WA.html",
+        "https://palouse-power.test/colfax"
+      ],
+      "furniture": { "lsaPresent": false, "adsCount": 0, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "pullman-wa", "cluster": "ev" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": ["b-swift-electric", "b-palouse-pro", "b-voltway"],
+      "organicTop10": [
+        "https://swift-electric.test/ev-chargers",
+        "https://palouse-pro.test/ev",
+        "https://voltway.test/ev-charger-install",
+        "https://www.yelp.com/search?find_desc=ev+charger+pullman",
+        "https://gridline-electric.test/ev",
+        "https://chargersmith.test/pullman",
+        "https://www.angi.com/companylist/pullman/ev-charger.htm",
+        "https://moscowelectric.test/ev-pullman",
+        "https://palouse-power.test/ev",
+        "https://ampd-electric.test/ev"
+      ],
+      "furniture": { "lsaPresent": true, "adsCount": 3, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "moscow-id", "cluster": "ev" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": ["b-moscow-sparks", "b-swift-electric", "b-palouse-pro"],
+      "organicTop10": [
+        "https://moscowelectric.test/ev",
+        "https://swift-electric.test/moscow-ev",
+        "https://palouse-pro.test/moscow-ev",
+        "https://www.yelp.com/search?find_desc=ev+charger+moscow",
+        "https://chargersmith.test/moscow",
+        "https://idaho-current.test/ev",
+        "https://www.thumbtack.com/id/moscow/ev-charger",
+        "https://voltway.test/moscow-ev",
+        "https://gridline-electric.test/moscow-ev",
+        "https://palouse-power.test/moscow-ev"
+      ],
+      "furniture": { "lsaPresent": false, "adsCount": 1, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "pullman-wa", "cluster": "rewiring" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": [],
+      "organicTop10": [
+        "https://swift-electric.test/rewiring",
+        "https://palouse-pro.test/rewiring",
+        "https://gridline-electric.test/knob-and-tube",
+        "https://voltway.test/rewiring",
+        "https://www.yelp.com/search?find_desc=rewiring+pullman",
+        "https://www.angi.com/companylist/pullman/rewiring.htm",
+        "https://www.homeadvisor.com/c.Rewiring.Pullman.WA.html",
+        "https://www.thumbtack.com/wa/pullman/rewiring",
+        "https://www.houzz.com/professionals/electrician/pullman",
+        "https://www.bbb.org/us/wa/pullman/category/electrician"
+      ],
+      "furniture": { "lsaPresent": false, "adsCount": 0, "directoryStacked": true }
+    },
+    {
+      "cell": { "town": "spokane-wa", "cluster": "panel" },
+      "capturedAt": "2026-06-28T00:00:00Z",
+      "packTop3": [],
+      "organicTop10": [
+        "https://www.yelp.com/search?find_desc=panel+upgrade+spokane",
+        "https://www.angi.com/companylist/spokane/electrical.htm",
+        "https://www.homeadvisor.com/c.Electrical.Spokane.WA.html",
+        "https://www.thumbtack.com/wa/spokane/electrical",
+        "https://www.houzz.com/professionals/electrician/spokane",
+        "https://www.yellowpages.com/spokane-wa/electricians",
+        "https://www.bbb.org/us/wa/spokane/category/electrician",
+        "https://www.expertise.com/wa/spokane/electricians",
+        "https://www.porch.com/spokane-wa/electricians",
+        "https://www.mapquest.com/search/electrician-spokane"
+      ],
+      "furniture": { "lsaPresent": true, "adsCount": 4, "directoryStacked": true }
+    }
+  ]
+}

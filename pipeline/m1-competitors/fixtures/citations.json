@@ -1,0 +1,41 @@
+{
+  "capturedAt": "2026-06-21T10:00:00Z",
+  "expectedSources": ["yelp.com", "bbb.org", "angi.com", "facebook.com", "nextdoor.com"],
+  "listings": [
+    {
+      "source": "yelp.com",
+      "listingUrl": "https://www.yelp.com/biz/crescent-electric-moscow",
+      "name": "Crescent Electric",
+      "phone": "(208) 555-0142",
+      "address": "Moscow, ID 83843"
+    },
+    {
+      "source": "yelp.com",
+      "listingUrl": "https://www.yelp.com/biz/crescent-electric-moscow-2",
+      "name": "Crescent Electric LLC",
+      "phone": "(208) 555-9877",
+      "address": "Moscow, ID 83843"
+    },
+    {
+      "source": "bbb.org",
+      "listingUrl": "https://www.bbb.org/us/id/moscow/profile/electrician/crescent-electric-services",
+      "name": "Crescent Electric Services",
+      "phone": "(208) 555-0142",
+      "address": "1042 W Main St, Pullman, WA 99163"
+    },
+    {
+      "source": "angi.com",
+      "listingUrl": "https://www.angi.com/companylist/us/id/moscow/crescent-electric.htm",
+      "name": "Crescent Electric",
+      "phone": "(208) 555-0143",
+      "address": "Moscow, ID 83843"
+    },
+    {
+      "source": "facebook.com",
+      "listingUrl": "https://www.facebook.com/crescentelectricservices",
+      "name": "Crescent Electric",
+      "phone": "(208) 555-0142",
+      "address": "Moscow, ID 83843"
+    }
+  ]
+}
