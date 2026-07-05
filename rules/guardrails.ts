@@ -69,6 +69,17 @@ export function g2ProximityCeiling(
   const clientMiles = driveTimeMin * G2_MILES_PER_DRIVE_MIN;
   const observed = winnerDistancesMiles.filter((d) => Number.isFinite(d) && d >= 0);
 
+  // Towns within the drive-time prior are always pack-viable: the ceiling
+  // exists to demote DISTANT cells, never nearby ones — an empirical
+  // distribution of hyper-central winners must not fail a 15-minute town.
+  if (driveTimeMin <= G2_DRIVE_TIME_PRIOR_MIN) {
+    return {
+      ok: true,
+      ruleId: "G2",
+      reason: `G2 passes: ${cell.town}×${cell.cluster} is ${driveTimeMin} min from base, within the ${G2_DRIVE_TIME_PRIOR_MIN}-min drive-time prior`,
+    };
+  }
+
   if (observed.length >= G2_MIN_OBSERVATIONS) {
     const maxObserved = Math.max(...observed);
     const ceiling = maxObserved * (1 + G2_EMPIRICAL_MARGIN);
