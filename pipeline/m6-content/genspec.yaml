@@ -1,0 +1,99 @@
+# genspec.yaml — generation spec for M6 content drafting (v0.1).
+#
+# Hand-synced distillation of the reference client's voice-guide.md and
+# page-templates.md, generalized: every client-specific value is a {{token}}
+# resolved from the client manifest / qa-config at draft time.
+#
+# V05: compile this spec into copy-qa rules (single source of truth for the
+# 3-way drift between genspec, gates, and templates). Until client #3, the
+# copy-qa defaults in gates/copy-qa.ts are hand-synced with the `voice.dont`
+# list below — change one, change both.
+
+meta:
+  version: 0.1
+  scope: [service, location, service-town]
+  drafting: out-of-scope-at-v0.1   # this spec constrains drafts; gates enforce
+
+voice:
+  register: >
+    Plain trade voice. Write like the person who does the work, slightly
+    annoyed about the same thing the customer is annoyed about. First-person
+    plural: "We pull the permit. We size the circuit." Never "our team of
+    experts will...".
+  do:
+    - Name specific equipment, parts, and code references naturally in sentences.
+    - Reference local geography concretely; permit authority by name ({{permit_authority}}).
+    - Name the serving utility ({{utility_name}}) when relevant to the work.
+    - State cost ranges directly; never "call for a quote".
+    - Include the license number in body copy ({{license_number}}).
+    - Open with the symptom that brought the reader to the page.
+    - FAQ answers: answer the literal question in the first sentence, then explain.
+  dont:  # hand-synced with DEFAULT_COPY_RULES in gates/copy-qa.ts
+    - "all your ___ needs"
+    - "peace of mind (as filler/closing line)"
+    - "top-notch / best-in-class / premier / leading"
+    - "comprehensive / wide range / full range"
+    - "tailored solutions / customized solutions"
+    - "seamless / hassle-free / stress-free"
+    - "commitment to / dedication to"
+    - "excellence / quality workmanship / high-quality"
+    - "nestled / in the heart of / vibrant / rich"
+    - "not just / more than just"
+    - "we understand that [pain]"
+    - "in today's [world/market/landscape]"
+    - "rest assured / state-of-the-art"
+    - "keyword-stuffed H1s with city lists"
+    - "unsupported superlatives (#1, top-rated, highest-rated)"
+
+structure:
+  h1:
+    patterns:
+      - "[Primary service keyword] in {{town_name}}"        # crisp descriptor
+      - "Licensed [trade] for [specific outcome]"           # credential-first
+      - "[Reader-question hook about the symptom]"          # question hook
+    never: keyword-stuffed strings or multi-city lists
+  hero:
+    intro_words: {min: 50, max: 80}
+    trust_signals: 2-4 above or immediately below the fold (license number, rating, years)
+    cta: single primary CTA, phone always paired with button
+  section_sequence:
+    - hero
+    - education        # "What is it / Types"
+    - problem          # "Signs you need it / Why now"
+    - process          # numbered steps
+    - cost             # middle third, ALWAYS; range + variance drivers
+    - benefits
+    - why_us           # short trust block
+    - faq              # bottom third
+    - service_area
+    - final_cta
+  cost_anchor:         # the 5-step pattern from the reference research
+    - name_the_range_directly
+    - name_what_drives_variance
+    - address_the_outlier_quote
+    - promise_transparency_not_a_fixed_price
+    - permit_as_a_line_item          # requires an in-scope local_facts entry (G8)
+  pricing_signoff: owner_signoff     # publishing prices is a business decision
+  faq:
+    count: {min: 4, max: 6}
+    answer_words: {min: 20, max: 150}
+    rule: cost-first or scope-first, never hedged-first; unique per page (faq-unique gate)
+  page_length_words:
+    default: {min: 800, max: 2000}
+
+localization:
+  # Every local claim must trace to the manifest — the gates enforce this.
+  sources:
+    permit_and_code_claims: manifest.local_facts (G8 — write around the topic if absent)
+    utility_and_rebate_claims: manifest.local_facts (G8)
+    proof_of_work: manifest.proof_assets.jobs (FULL tier only; DEGRADED pages
+      carry no proof-dependent claims)
+    housing_stock_and_conditions: manifest.local_facts or omit
+  requirements:
+    min_unique_local_info_units: 3   # info-gain gate, vs ranking incumbents
+    boilerplate_ratio_cap: qa-config.maxBoilerplateRatio
+
+review:
+  human_editorial: hard gate on the first ~10 pages per client and per new
+    vertical, then sampled — gates cannot catch a confident falsehood that
+    parses cleanly.
