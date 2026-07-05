@@ -1,0 +1,15 @@
+{
+  "brandTerms": ["Crescent Electric", "Crescent"],
+  "vocabAllow": [
+    "panel", "panels", "wiring", "electrical", "electrician", "circuit",
+    "circuits", "breaker", "amp", "GFCI", "permit", "inspection",
+    "generator", "lighting", "rewire", "charger"
+  ],
+  "bannedPhrases": [
+    "Moscow shop",
+    "shop in Moscow",
+    "select Spokane-area projects"
+  ],
+  "ignorePatterns": ["Lic#\\s*\\w+"],
+  "maxBoilerplateRatio": 0.32
+}

@@ -1,0 +1,114 @@
+{
+  "business": {
+    "legal_name": "Crescent Electric LLC",
+    "phone_nap": "(208) 555-0142",
+    "email": "office@example-crescent.test",
+    "website_url": "https://example-crescent.test",
+    "domain_age_months": 18,
+    "entity": {
+      "schema_type": "Electrician",
+      "founding_year": 2022,
+      "owner_names": ["Parker McPhetridge"]
+    },
+    "licenses": [
+      { "type": "electrical_contractor", "number": "CRESCLE781QD", "state": "WA" },
+      { "type": "electrical_contractor", "number": "ELE-C-99999", "state": "ID" }
+    ],
+    "booking_url": null,
+    "brand_constraints": {
+      "banned_phrases": ["cheap", "discount electrician"],
+      "required_disclaimers": [],
+      "tone_notes": "plain trade voice, first-person plural, no hype",
+      "competitor_names_never_mention": []
+    }
+  },
+  "locations": {
+    "base": {
+      "city": "Moscow",
+      "state": "ID",
+      "zip": "83843",
+      "lat_lng": [46.7324, -117.0002],
+      "is_storefront_or_SAB": "SAB"
+    },
+    "service_area": {
+      "target_region_label": "the Palouse",
+      "towns": [
+        { "slug": "moscow-id", "name": "Moscow, ID", "drive_time_min": 0, "county": "Latah" },
+        { "slug": "pullman-wa", "name": "Pullman, WA", "drive_time_min": 15, "county": "Whitman" },
+        { "slug": "colfax-wa", "name": "Colfax, WA", "drive_time_min": 35, "county": "Whitman" },
+        { "slug": "lewiston-id", "name": "Lewiston, ID", "drive_time_min": 40, "county": "Nez Perce" },
+        { "slug": "spokane-wa", "name": "Spokane, WA", "drive_time_min": 95, "county": "Spokane" },
+        { "slug": "palouse-wa", "name": "Palouse, WA", "drive_time_min": 30, "county": "Whitman" },
+        { "slug": "troy-id", "name": "Troy, ID", "drive_time_min": 20, "county": "Latah" },
+        { "slug": "genesee-id", "name": "Genesee, ID", "drive_time_min": 15, "county": "Latah" }
+      ]
+    },
+    "priority_towns": ["moscow-id", "pullman-wa"]
+  },
+  "services": {
+    "clusters": [
+      { "cluster_id": "panel", "label": "Electrical Panel Upgrades", "capacity": true },
+      { "cluster_id": "ev-charger", "label": "EV Charger Installation", "capacity": true },
+      { "cluster_id": "lighting", "label": "Lighting Installation", "capacity": true },
+      { "cluster_id": "hot-tub", "label": "Hot Tub & Spa Wiring", "capacity": true },
+      { "cluster_id": "generator", "label": "Generator Installation", "capacity": true },
+      { "cluster_id": "rewiring", "label": "Home Rewiring & Old Wiring", "capacity": true }
+    ],
+    "do_not_offer": ["solar installation"]
+  },
+  "proof_assets": {
+    "jobs": [],
+    "certifications": [],
+    "awards": []
+  },
+  "local_facts": [
+    {
+      "fact_id": "lf-whitman-permit-panel",
+      "claim": "Whitman County charges $95–$140 for a residential electrical permit on panel changeouts",
+      "source_url_or_owner_attestation": "owner attestation 2026-05-02",
+      "verified_by": "owner",
+      "verified_date": "2026-05-02",
+      "towns": ["pullman-wa", "colfax-wa", "palouse-wa"],
+      "clusters": ["panel"]
+    },
+    {
+      "fact_id": "lf-avista-service",
+      "claim": "Avista Utilities serves most homes in Pullman, Palouse, and Colfax",
+      "source_url_or_owner_attestation": "https://example-utility.test/service-area",
+      "verified_by": "owner",
+      "verified_date": "2026-05-02",
+      "towns": ["pullman-wa", "colfax-wa", "palouse-wa"],
+      "clusters": []
+    }
+  ],
+  "gbp": {
+    "access_level": "owner",
+    "profile_url": "https://maps.example.test/crescent",
+    "current_primary_category": "Electrician",
+    "review_reply_policy": "owner replies within 3 days"
+  },
+  "owner_commitments": {
+    "hours_per_month": 4,
+    "will_ask_for_reviews": { "yes": true, "expected_per_month": 4 },
+    "will_provide_job_photos": { "yes": true, "cadence": "weekly" },
+    "will_do_gbp_posts": "delegate",
+    "budget": {
+      "content_pages_per_month": 4,
+      "citations_budget_usd": 100,
+      "link_outreach": false
+    },
+    "hard_nos": []
+  },
+  "goals": {
+    "primary_kpi": "calls",
+    "target_clusters_ranked": ["panel", "ev-charger", "generator"],
+    "time_horizon_months": 12
+  },
+  "integrations": {
+    "gsc_property": null,
+    "ga4": null,
+    "call_tracking": null,
+    "gbp_api_token": null,
+    "dataforseo": null
+  }
+}

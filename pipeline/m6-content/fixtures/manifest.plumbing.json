@@ -1,0 +1,84 @@
+{
+  "business": {
+    "legal_name": "Bluewater Plumbing LLC",
+    "phone_nap": "(541) 555-0177",
+    "email": "office@example-bluewater.test",
+    "website_url": "https://example-bluewater.test",
+    "domain_age_months": 30,
+    "entity": {
+      "schema_type": "Plumber",
+      "founding_year": 2019,
+      "owner_names": ["Dana Whitfield"]
+    },
+    "licenses": [
+      { "type": "plumbing_contractor", "number": "PB-4417-OR", "state": "OR" }
+    ],
+    "booking_url": null,
+    "brand_constraints": {
+      "banned_phrases": ["cheapest plumber"],
+      "required_disclaimers": [],
+      "tone_notes": "plain trade voice",
+      "competitor_names_never_mention": []
+    }
+  },
+  "locations": {
+    "base": {
+      "city": "Riverton",
+      "state": "OR",
+      "zip": "97479",
+      "lat_lng": [43.4165, -123.3307],
+      "is_storefront_or_SAB": "SAB"
+    },
+    "service_area": {
+      "target_region_label": "the Umpqua Valley",
+      "towns": [
+        { "slug": "riverton-or", "name": "Riverton, OR", "drive_time_min": 0, "county": "Douglas" },
+        { "slug": "fairview-or", "name": "Fairview, OR", "drive_time_min": 20, "county": "Douglas" }
+      ]
+    },
+    "priority_towns": ["riverton-or"]
+  },
+  "services": {
+    "clusters": [
+      { "cluster_id": "drain-cleaning", "label": "Drain Cleaning", "capacity": true },
+      { "cluster_id": "water-heater", "label": "Water Heater Repair & Install", "capacity": true }
+    ],
+    "do_not_offer": ["septic pumping"]
+  },
+  "proof_assets": {
+    "jobs": [],
+    "certifications": [],
+    "awards": []
+  },
+  "local_facts": [],
+  "gbp": {
+    "access_level": "owner",
+    "profile_url": "https://maps.example.test/bluewater",
+    "current_primary_category": "Plumber",
+    "review_reply_policy": "owner replies weekly"
+  },
+  "owner_commitments": {
+    "hours_per_month": 3,
+    "will_ask_for_reviews": { "yes": true, "expected_per_month": 3 },
+    "will_provide_job_photos": { "yes": true, "cadence": "monthly" },
+    "will_do_gbp_posts": "no",
+    "budget": {
+      "content_pages_per_month": 2,
+      "citations_budget_usd": 50,
+      "link_outreach": false
+    },
+    "hard_nos": []
+  },
+  "goals": {
+    "primary_kpi": "calls",
+    "target_clusters_ranked": ["drain-cleaning"],
+    "time_horizon_months": 12
+  },
+  "integrations": {
+    "gsc_property": null,
+    "ga4": null,
+    "call_tracking": null,
+    "gbp_api_token": null,
+    "dataforseo": null
+  }
+}

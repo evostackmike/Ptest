@@ -1,0 +1,10 @@
+{
+  "brandTerms": ["Bluewater Plumbing", "Bluewater"],
+  "vocabAllow": [
+    "drain", "drains", "sewer", "plumbing", "plumber", "pipe", "pipes",
+    "water heater", "cleanout", "camera", "jetting", "cabling", "clog", "clogs"
+  ],
+  "bannedPhrases": [],
+  "ignorePatterns": [],
+  "maxBoilerplateRatio": 0.32
+}
