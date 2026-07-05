@@ -10,8 +10,13 @@ import { readFileSync } from "node:fs";
 import { z } from "zod";
 import type { QaConfig } from "../../core/types.js";
 
-/** Engine default: no client vocabulary, conservative boilerplate cap. */
-export const DEFAULT_MAX_BOILERPLATE_RATIO = 0.32;
+/**
+ * Engine default: no client vocabulary, conservative boilerplate cap.
+ * Calibrated against the reference client's real location pages (0.27–0.44
+ * shared 3-shingle ratio — all must fail) vs a genuinely-local hand-written
+ * page (~0.02).
+ */
+export const DEFAULT_MAX_BOILERPLATE_RATIO = 0.25;
 
 export const qaConfigSchema = z.object({
   brandTerms: z.array(z.string()).default([]),

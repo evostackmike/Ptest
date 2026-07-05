@@ -109,23 +109,30 @@ function factInScope(
 
 /**
  * A sentence resolves to a fact when the fact is in scope for the page's cell
- * AND they share ≥2 significant words or a literal number.
+ * AND they share ≥2 significant words or a literal number. When
+ * `requireNumber` is set (numeric claims), the fact must carry the same
+ * number — word overlap alone cannot substantiate a quantity.
  * // V05: replace lexical overlap with claim-level entailment checking.
  */
 export function sentenceResolvesToFact(
   sentence: string,
   facts: LocalFact[],
   town: string | null,
-  cluster: string | null
+  cluster: string | null,
+  opts: { requireNumber?: boolean } = {}
 ): LocalFact | null {
   const sWords = sigWords(sentence);
   const sNums = numbersIn(sentence);
   for (const fact of facts) {
     if (!factInScope(fact, town, cluster)) continue;
+    const numShared = [...sNums].some((n) => numbersIn(fact.claim).has(n));
+    if (opts.requireNumber) {
+      if (numShared) return fact;
+      continue;
+    }
     const fWords = sigWords(fact.claim);
     let shared = 0;
     for (const w of sWords) if (fWords.has(w)) shared++;
-    const numShared = [...sNums].some((n) => numbersIn(fact.claim).has(n));
     if (shared >= 2 || numShared) return fact;
   }
   return null;
@@ -165,7 +172,7 @@ export function claimSubstantiation(page: PageContent, context: GateContext): Qa
       YEARS_CLAIM_RE.test(sentence) ||
       PERCENT_CLAIM_RE.test(sentence)
     ) {
-      if (!sentenceResolvesToFact(sentence, facts, town, cluster)) {
+      if (!sentenceResolvesToFact(sentence, facts, town, cluster, { requireNumber: true })) {
         fail(sentence, `numeric claim does not resolve to any in-scope local_facts entry`);
       }
     }

@@ -6,5 +6,5 @@
   ],
   "bannedPhrases": [],
   "ignorePatterns": [],
-  "maxBoilerplateRatio": 0.32
+  "maxBoilerplateRatio": 0.25
 }

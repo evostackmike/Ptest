@@ -1,0 +1,40 @@
+{
+  "clusters": [
+    {
+      "clusterId": "panel",
+      "keywords": [
+        {
+          "query": "panel upgrade pullman",
+          "town": "pullman-wa",
+          "volume": 20,
+          "marketExists": true,
+          "canonicalUrl": null
+        },
+        {
+          "query": "electrical panel upgrade moscow id",
+          "town": "moscow-id",
+          "volume": null,
+          "marketExists": true,
+          "canonicalUrl": null
+        },
+        {
+          "query": "panel upgrade colfax wa",
+          "town": "colfax-wa",
+          "volume": null,
+          "marketExists": true,
+          "canonicalUrl": null
+        },
+        {
+          "query": "panel upgrade spokane",
+          "town": "spokane-wa",
+          "volume": 90,
+          "marketExists": true,
+          "canonicalUrl": null
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    { "query": "solar panel installation pullman", "reason": "do_not_offer: solar installation" }
+  ]
+}

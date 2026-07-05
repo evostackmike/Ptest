@@ -1,0 +1,284 @@
+{
+  "businesses": [
+    {
+      "businessId": "b-client",
+      "name": "Palouse Test Electric LLC",
+      "websiteUrl": "https://palouse-test-electric.test",
+      "nameKeywords": [],
+      "siteDepth": 6,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "pullman-wa", "cluster": "panel" },
+          "surface": "ORGANIC",
+          "position": 9,
+          "reviewCount": 12,
+          "rating": 5.0,
+          "distanceMiles": 0.8,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-swift-electric",
+      "name": "Swift Electric",
+      "websiteUrl": "https://swift-electric.test",
+      "nameKeywords": [],
+      "siteDepth": 24,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "pullman-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 1,
+          "reviewCount": 258,
+          "rating": 4.7,
+          "distanceMiles": 3.1,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        },
+        {
+          "cell": { "town": "moscow-id", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 3,
+          "reviewCount": 258,
+          "rating": 4.7,
+          "distanceMiles": 6.1,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-palouse-pro",
+      "name": "Palouse Pro Wiring",
+      "websiteUrl": "https://palouse-pro.test",
+      "nameKeywords": [],
+      "siteDepth": 12,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "pullman-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 2,
+          "reviewCount": 120,
+          "rating": 4.8,
+          "distanceMiles": 5.2,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-spam-volt",
+      "name": "Pullman Panel Upgrade Electrician Pros",
+      "websiteUrl": null,
+      "nameKeywords": ["pullman", "panel", "upgrade", "electrician"],
+      "siteDepth": null,
+      "hasLocalBusinessSchema": null,
+      "facets": [
+        {
+          "cell": { "town": "pullman-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 3,
+          "reviewCount": 60,
+          "rating": 4.9,
+          "distanceMiles": 4.4,
+          "primaryCategory": "Electrician",
+          "spamFlags": ["NAME_KEYWORD_STUFFING"]
+        }
+      ]
+    },
+    {
+      "businessId": "b-moscow-a",
+      "name": "Moscow Electric Co",
+      "websiteUrl": "https://moscow-electric.test",
+      "nameKeywords": [],
+      "siteDepth": 10,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "moscow-id", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 1,
+          "reviewCount": 90,
+          "rating": 4.6,
+          "distanceMiles": 2.2,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-moscow-b",
+      "name": "Latah Current",
+      "websiteUrl": "https://latah-current.test",
+      "nameKeywords": [],
+      "siteDepth": 7,
+      "hasLocalBusinessSchema": false,
+      "facets": [
+        {
+          "cell": { "town": "moscow-id", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 2,
+          "reviewCount": 70,
+          "rating": 4.5,
+          "distanceMiles": 3.5,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-palouse-power",
+      "name": "Palouse Power SAB",
+      "websiteUrl": "https://palouse-power.test",
+      "nameKeywords": [],
+      "siteDepth": 9,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "colfax-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 1,
+          "reviewCount": 40,
+          "rating": 4.9,
+          "distanceMiles": 24.5,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-sab-two",
+      "name": "Wheatland Wiring",
+      "websiteUrl": null,
+      "nameKeywords": [],
+      "siteDepth": null,
+      "hasLocalBusinessSchema": null,
+      "facets": [
+        {
+          "cell": { "town": "colfax-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 2,
+          "reviewCount": 35,
+          "rating": 4.7,
+          "distanceMiles": 22.0,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-sab-three",
+      "name": "Steptoe Sparks",
+      "websiteUrl": null,
+      "nameKeywords": [],
+      "siteDepth": null,
+      "hasLocalBusinessSchema": null,
+      "facets": [
+        {
+          "cell": { "town": "colfax-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 3,
+          "reviewCount": 18,
+          "rating": 5.0,
+          "distanceMiles": 27.5,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-spokane-a",
+      "name": "Spokane Electric One",
+      "websiteUrl": "https://spokane-one.test",
+      "nameKeywords": [],
+      "siteDepth": 40,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "spokane-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 1,
+          "reviewCount": 310,
+          "rating": 4.8,
+          "distanceMiles": 2.4,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-spokane-b",
+      "name": "Lilac City Volts",
+      "websiteUrl": "https://lilac-volts.test",
+      "nameKeywords": [],
+      "siteDepth": 25,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "spokane-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 2,
+          "reviewCount": 190,
+          "rating": 4.6,
+          "distanceMiles": 4.1,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    },
+    {
+      "businessId": "b-spokane-c",
+      "name": "Inland Amp",
+      "websiteUrl": "https://inland-amp.test",
+      "nameKeywords": [],
+      "siteDepth": 18,
+      "hasLocalBusinessSchema": true,
+      "facets": [
+        {
+          "cell": { "town": "spokane-wa", "cluster": "panel" },
+          "surface": "LOCAL_PACK",
+          "position": 3,
+          "reviewCount": 220,
+          "rating": 4.7,
+          "distanceMiles": 1.8,
+          "primaryCategory": "Electrician",
+          "spamFlags": []
+        }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "cell": { "town": "pullman-wa", "cluster": "panel" },
+      "capturedAt": "2026-06-20T00:00:00Z",
+      "packTop3": ["b-swift-electric", "b-palouse-pro", "b-spam-volt"],
+      "organicTop10": ["b-swift-electric", "b-palouse-pro", "b-client"],
+      "furniture": { "lsaPresent": true, "adsCount": 2, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "moscow-id", "cluster": "panel" },
+      "capturedAt": "2026-06-20T00:00:00Z",
+      "packTop3": ["b-moscow-a", "b-moscow-b", "b-swift-electric"],
+      "organicTop10": ["b-moscow-a", "b-swift-electric"],
+      "furniture": { "lsaPresent": false, "adsCount": 0, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "colfax-wa", "cluster": "panel" },
+      "capturedAt": "2026-06-20T00:00:00Z",
+      "packTop3": ["b-palouse-power", "b-sab-two", "b-sab-three"],
+      "organicTop10": ["b-palouse-power"],
+      "furniture": { "lsaPresent": false, "adsCount": 0, "directoryStacked": false }
+    },
+    {
+      "cell": { "town": "spokane-wa", "cluster": "panel" },
+      "capturedAt": "2026-06-20T00:00:00Z",
+      "packTop3": ["b-spokane-a", "b-spokane-b", "b-spokane-c"],
+      "organicTop10": ["b-spokane-a", "b-spokane-b", "b-spokane-c"],
+      "furniture": { "lsaPresent": true, "adsCount": 3, "directoryStacked": true }
+    }
+  ]
+}

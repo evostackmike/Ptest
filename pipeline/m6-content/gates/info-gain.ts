@@ -22,11 +22,12 @@ export const MIN_INFO_GAIN = 3;
 
 const PROPER = "[A-Z][A-Za-z'&.\\-]+";
 /**
- * Multi-word capitalized sequences, optionally joined by of/the/and.
- * Joined by spaces/tabs only — an entity never spans a line break.
+ * Multi-word capitalized sequences, optionally joined by of/the ("City of
+ * Moscow" style). "and"/"&" are NOT joiners — a coordination is two mentions,
+ * not one entity. Joined by spaces/tabs only — never spans a line break.
  */
 const ENTITY_RE = new RegExp(
-  `${PROPER}(?:[ \\t]+(?:of|the|and|&)[ \\t]+${PROPER}|[ \\t]+${PROPER})+`,
+  `${PROPER}(?:[ \\t]+(?:of|the)[ \\t]+${PROPER}|[ \\t]+${PROPER})+`,
   "g"
 );
 
@@ -46,7 +47,11 @@ export function extractInfoUnits(text: string): Map<string, string> {
     const fresh = new RegExp(re.source, re.flags);
     let m: RegExpExecArray | null;
     while ((m = fresh.exec(text))) {
-      const display = m[0].trim();
+      const display = m[0]
+        .trim()
+        .replace(/^(?:The|A|An)\s+/i, "")
+        .replace(/[,.;:]+$/, "");
+      if (display.length < 3) continue;
       units.set(normalizeKey(display), display);
     }
   }

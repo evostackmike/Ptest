@@ -1,0 +1,86 @@
+{
+  "business": {
+    "legal_name": "Palouse Test Electric LLC",
+    "phone_nap": "(509) 555-0100",
+    "email": "office@palouse-test-electric.test",
+    "website_url": "https://palouse-test-electric.test",
+    "domain_age_months": 18,
+    "entity": {
+      "schema_type": "Electrician",
+      "founding_year": 2015,
+      "owner_names": ["Jordan Test"]
+    },
+    "licenses": [
+      { "type": "electrical_contractor", "number": "PALOUTE*TEST01", "state": "WA" },
+      { "type": "electrical_contractor", "number": "ID-TEST-0001", "state": "ID" }
+    ],
+    "booking_url": null,
+    "brand_constraints": {
+      "banned_phrases": [],
+      "required_disclaimers": [],
+      "tone_notes": "plain, local",
+      "competitor_names_never_mention": []
+    }
+  },
+  "locations": {
+    "base": {
+      "city": "Pullman",
+      "state": "WA",
+      "zip": "99163",
+      "lat_lng": [46.7313, -117.1796],
+      "is_storefront_or_SAB": "SAB"
+    },
+    "service_area": {
+      "target_region_label": "the Palouse",
+      "towns": [
+        { "slug": "pullman-wa", "name": "Pullman, WA", "drive_time_min": 10, "lat_lng": [46.7313, -117.1796] },
+        { "slug": "moscow-id", "name": "Moscow, ID", "drive_time_min": 15, "lat_lng": [46.7324, -117.0002] },
+        { "slug": "colfax-wa", "name": "Colfax, WA", "drive_time_min": 35, "lat_lng": [46.8802, -117.3644] },
+        { "slug": "spokane-wa", "name": "Spokane, WA", "drive_time_min": 95, "lat_lng": [47.6588, -117.4260] }
+      ]
+    },
+    "priority_towns": ["pullman-wa", "moscow-id"]
+  },
+  "services": {
+    "clusters": [
+      { "cluster_id": "panel", "label": "Panel upgrades", "emergency_offered": false, "capacity": true }
+    ],
+    "do_not_offer": ["solar installation"]
+  },
+  "proof_assets": {
+    "jobs": [],
+    "certifications": [],
+    "awards": []
+  },
+  "local_facts": [],
+  "gbp": {
+    "access_level": "owner",
+    "profile_url": "https://maps.google.test/palouse-test-electric",
+    "current_primary_category": "Electrician",
+    "review_reply_policy": "owner replies within 48h"
+  },
+  "owner_commitments": {
+    "hours_per_month": 4,
+    "will_ask_for_reviews": { "yes": true, "expected_per_month": 4 },
+    "will_provide_job_photos": { "yes": true, "cadence": "monthly" },
+    "will_do_gbp_posts": "delegate",
+    "budget": {
+      "content_pages_per_month": 4,
+      "citations_budget_usd": 100,
+      "link_outreach": false
+    },
+    "hard_nos": []
+  },
+  "goals": {
+    "primary_kpi": "calls",
+    "target_clusters_ranked": ["panel"],
+    "time_horizon_months": 12
+  },
+  "integrations": {
+    "gsc_property": "sc-domain:palouse-test-electric.test",
+    "ga4": null,
+    "call_tracking": "callrail-test",
+    "gbp_api_token": null,
+    "dataforseo": "env:DFS_LOGIN"
+  }
+}

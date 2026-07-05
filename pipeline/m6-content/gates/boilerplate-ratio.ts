@@ -21,7 +21,7 @@ import {
 export const GATE_ID = "boilerplate-ratio";
 
 /** Word-shingle size for overlap detection. */
-export const SHINGLE_SIZE = 4;
+export const SHINGLE_SIZE = 3;
 
 function normalizedShingles(page: PageContent, tokens: string[]): Set<string> {
   const text = normalizeLocale(pageProse(page), tokens);

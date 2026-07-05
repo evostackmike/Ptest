@@ -11,5 +11,5 @@
     "select Spokane-area projects"
   ],
   "ignorePatterns": ["Lic#\\s*\\w+"],
-  "maxBoilerplateRatio": 0.32
+  "maxBoilerplateRatio": 0.25
 }
