@@ -1,0 +1,69 @@
+# CURRENT vs TARGET Gap Matrix — Local SEO Engine
+
+Legend for **Current state**: `EXISTS` (reusable as-is) · `HARDCODED` (exists but client-baked, needs parameterization) · `MANUAL-DOC` (a human did it once; the artifact encodes the method but no code exists) · `MISSING` (nothing exists in any form).
+
+---
+
+## 1. Module-by-module matrix
+
+| Module | Current state | What exists today (Inventory A ref) | What closes the gap | Data dependency (Inventory C) | Effort | Blocks closed loop? |
+|---|---|---|---|---|---|---|
+| **INTAKE — Client Manifest** | MISSING (fragments HARDCODED) | No manifest. Business facts scattered as constants across `ServicePage.tsx`/`LocationPage.tsx` (phone ×3, Jobber URL ×3, address, schemaType), inside copy strings in `_data.ts`, and in `seo-research.md §1`. No proof-asset registry, no owner-commitments, no validation gate. | Define `client-manifest.json` schema (zod); write validation gate; extract every Crescent constant into a manifest instance as the migration test. | None — human-supplied input | **M** | **YES** — every module keys on it; owner-commitment ceilings and proof gates are unenforceable without it |
+| **M1 — Competitor discovery & profiling** | MANUAL-DOC | `seo-research.md §2` (competitor table w/ reviews, years, moats; 10-site service-frequency inventory), `competitor-analysis.md` (moat/vulnerability, open/defended lanes), `pullman-competitors.md` (proof that top-3 differ per submarket). All hand-researched SERP-by-SERP. Zero code. | Build the per-cell SERP query loop (town centroid + offset points, pack + organic recorded separately), competitor registry dedupe, per-competitor profiler. Template the report from the three docs' structure. | DataForSEO SERP API ($0.0006/SERP) + Business Data API (GBP profiles) + Backlinks API ($100/mo floor, deferrable) | **L** | **YES** — M9 needs the registry to know *who* to track; M10's "new entrant" rule needs delta re-runs |
+| **M2 — Keyword / demand research** | MANUAL-DOC | `seo-research.md §3`: master keyword list *with confirmed-skip list* (volume-validation gate already practiced by hand). `§18` contains a quantified codeable rule (≥60% specialty-domain SERP overlap = same cluster / 30–60% borderline / <30% split). No code. | Seed-expansion generator (clusters × towns × intent modifiers), volume lookup, demand-proxy fallback for hyper-local zeros, `keyword-map.json` schema, **code §18's cluster-validation rule** — it's the one algorithm already fully specified. | DataForSEO Keywords Data + Labs APIs (~$0.10/1k KD); reuses M1 SERP snapshots; GSC query export (free) if domain has history | **M** | Indirect — defines what M9 tracks; loop can start with a hand-built keyword map |
+| **M3 — GBP gap analysis** | MISSING | Nothing. Not even a manual doc — GBP was never systematically diffed for Crescent. | Diff client GBP vs modal pack-winner profiles: categories, services list (paste-ready output), attributes, review count + 90-day velocity benchmark, photo/post cadence. Emit `gbp-gap-report.json`. | DataForSEO Business Data (competitor side); GBP API for client side (**approval lead time = weeks — apply now**); manual export as v0.1 fallback | **M** | **YES** for the pack surface — pack is won off-site; without M3 the engine only plays the organic half |
+| **M4 — Feasibility scorer** | MANUAL-DOC (rules verified, uncoded) | The prior audit verified the hard rules (proximity ceilings, review-gap realism, indexation latency, zero-competition≠opportunity, doorway filter, brand collisions) as prose findings. `LocationData.driveTime` field is an implicit proximity signal already in the content model. | Encode the Section-5 guardrail table as a pure rules engine over (M1 facts, M2 demand, M3 gaps, manifest drive-times/commitments) → per-cell verdict + fired-rule citation + time-to-win estimate. | None new — consumes M1/M2/M3 outputs + manifest | **M** (pure logic, high leverage) | **YES** — M10 re-scores cells through it; without it the loop can't say *why* a cell isn't moving |
+| **M5 — Site-architecture generator** | MANUAL-DOC | `seo-research.md §4, §12–15` (tiered architecture, per-page specs, internal-link matrix, **§15 cannibalization map** = one-URL-per-intent gate, practiced by hand); `seo-page-plan.md` (phased plan — the pages were specified but never built: the verified execution failure). | Keyword→URL bijection generator with cannibalization gate, **proof gate** (location page requires ≥N publishable jobs for town×cluster or `BLOCKED: awaiting proof`), min-unique-content thresholds, slug/canonical/301 plan diffed vs existing-site crawl. Output `site-architecture.json`. | M2 map + M4 verdicts + manifest proof assets + a site crawler (trivial — sitemap-driven, seed exists in `render-copy-audit.mjs`) | **L** | **YES** — M10 amendments write into its intent map; cannibalization rule in the signals table needs it |
+| **M6 — Content generation** | HARDCODED (gates) + MANUAL-DOC (spec) | The **strongest salvage cluster**: `ServiceData`/`LocationData` types (the content contract), `copy-qa.mjs` (14 generic AI-slop rules, phrase budgets, readability — but `copySignals` regex hardcodes Crescent/electrician vocab, silently dropping other clients' copy), `page-templates.md` meta-template (~vertical-generic), `voice-guide.md` (half generic; DON'T list hand-duplicated in 3 places with drift). No claim-substantiation check, no uniqueness/boilerplate-ratio check, no FAQ-dedupe — the exact checks whose absence produced the doorway liability. | (a) Parameterize copy-qa: rules/budgets/vocab/ignore-lists from per-client config, generic rules as defaults; (b) merge page-templates + voice-guide into one machine-readable generation spec that *compiles* the QA rules (kills 3-way drift); (c) add the missing gates: boilerplate-ratio cap, claim→manifest-evidence resolution, FAQ uniqueness, proof-asset embedding. | M5 page specs + manifest + M2 long-tails/PAA; LLM generation (in-house) | **M/L** | Partially — the `BLOCKED→auto-queue page build` loop rule needs it |
+| **M7 — Technical/schema scaffold** | HARDCODED (best-shaped module) | JSON-LD builders in both templates (generic once fed a BusinessProfile), `sitemap.ts`/`robots.ts` (slug lists hand-duplicated ×3 — drift risk), preview-noindex config (reusable as-is), `vercel.json` 301 pattern. **Violates schema-single-entity**: LocalBusiness re-declared per location page, no stable `@id`. | Extract `BusinessProfile`-driven template package; derive sitemap/routes from the content model (kill duplication); refactor to one `LocalBusiness` node referenced by `@id`; auto-generate 301 map from crawl diff. | Manifest + M5 output; no external APIs | **S/M** | No — but cheapest win; publishing depends on it |
+| **M8 — Off-site action queue** | MISSING | Nothing. Reviews/citations/links/GBP-cadence were never systematized even manually; no task tracker of any kind exists (verified failure: specified pages never built). | Task generator emitting `{id, type, owner, instructions, evidence_required, due, verifies_via}` from M3 gaps + M1 citation/backlink footprints, capped by owner_commitments. Even a JSON file + checklist renderer counts for v0.1. | BrightLocal/Whitespark (citations, deferrable); M1/M3 outputs otherwise | **M** | **YES** — the task ledger is a loop input (attribution + non-execution detection); "human tasks overdue" escalation rule reads it |
+| **M9 — Measurement loop** | MISSING (the verified open circuit) | *Zero code.* `render-copy-audit.mjs` is the only "measure" seed and it measures copy quality, not rankings. GSC, geo-grid, review ledger, GBP insights, conversions: none instrumented. | Collectors → per-client time-series store: GSC API (daily), geo-grid pack+organic (weekly), review ledger for client *and* registry competitors, GBP insights, task-ledger join, calls/forms. | **GSC API (free)** + DataForSEO SERP or Local Falcon (geo-grid, ~$0.03–0.10/DIY scan) + Business Data (competitor reviews) + GBP API (approval-gated) + GA4/call tracking | **L** | **IS the loop** — nothing closes without it |
+| **M10 — Re-planner** | MISSING (rules half-specified) | The signals→actions table and goal conditions (`PACK_WON`/`ORGANIC_WON`, 8-week sustain) exist as design prose from the audit; no execution substrate. | Rule executor over M9 deltas emitting task-plan *amendments* with signal+rule citations; monthly M1–M3 delta re-runs; M4 re-score; MAINTAIN-mode transitions; false-alarm suppression during indexation window. | M9 store + M4 scorer + M5 intent map + task ledger | **L** | **IS the loop's brain** |
+| **OUTPUT — Competition Report + Strategy Guide** | MANUAL-DOC | The entire `docs/` set is one hand-written instance; its structure *is* the template (Inventory A's asset table maps each doc → schema section). | Typed JSON report schemas + markdown renderers, populated by M1–M5 instead of a human chat session. | None new | **S/M** | No |
+| **OUTPUT — Task Plan / execution tracker** | MISSING | `seo-page-plan.md` is the skeleton (phases, unblock-list) but is prose; the highest-value pages it specified were never built. | Machine-readable `plan.json`: typed, dependency-ordered, gate-preconditioned tasks with status; agent tasks directly executable, human tasks tracked. | M5 + M8 outputs | **M** | **YES** — M10 has nothing to amend without it |
+
+---
+
+## 2. Gap classification
+
+### Bucket 1 — PARAMETERIZATION gaps (one-off → template; all effort S/M, no new data feeds)
+- Client manifest extraction: pull every hardcoded Crescent constant (phone-in-copy-strings, BusinessProfile fields, schemaType, booking URL) into `client-manifest.json`.
+- Content-model + render package: `ServiceData`/`LocationData` types + templates + schema builders + sitemap/robots/noindex, driven by manifest; fix the `@id` single-entity violation and add proof-gating fields to `LocationData`.
+- QA gate config-ification: `copy-qa.mjs` + `render-copy-audit.mjs` unified, rules/vocab/budgets externalized, routes from sitemap, Python duplicate deleted.
+- Doc-structure → report schemas: `seo-research.md` / `competitor-analysis.md` / `pullman-competitors.md` / `seo-page-plan.md` structures as typed output templates.
+- Generation spec: `page-templates.md` + `voice-guide.md` merged into one source of truth that compiles QA rules.
+
+### Bucket 2 — AUTOMATION gaps (manual research step → data-fed module)
+- M1 competitor discovery/profiling (DataForSEO SERP + Business Data) — replaces the largest manual effort (56KB of hand research).
+- M2 keyword/demand research incl. coding the §18 cluster-validation and volume-validation rules (DataForSEO Keywords/Labs).
+- M3 GBP gap analysis (Business Data + GBP API) — net-new capability, never even done manually.
+- M4 feasibility scorer — automating the audit's verified prose rules; pure logic, no feed.
+- M5 architecture generator incl. §15 cannibalization map and proof gate as code.
+- M8 off-site queue generator (citations/backlinks feeds deferrable).
+
+### Bucket 3 — LOOP gaps (never existed in any form)
+- M9 collectors + time-series store (GSC, geo-grid, review ledger, GBP insights, conversions).
+- M10 re-planner (signals→actions executor, goal conditions, MAINTAIN transitions).
+- Task plan / execution tracker with status — the loop's write-target (its absence is the *proven* failure mode).
+- Task ledger ↔ measurement join (attribution + non-execution escalation).
+- Long-lead access hurdles that gate this bucket specifically: **GBP API approval (weeks — start immediately)** and Google Ads spend for un-bucketed volumes.
+
+---
+
+## 3. Dependency-ordered critical path to v0.1
+*(one new client, end-to-end; semi-manual allowed where marked ⚙︎)*
+
+0. **Day 0, parallel:** open DataForSEO account ($50); **file GBP API approval** (longest lead item); pick the v0.1 client.
+1. **Manifest schema + validation gate** (M) — everything reads it. Prove it by porting Crescent into a manifest instance.
+2. **Content-model + template package** (S/M) — Bucket-1 extraction of `_data.ts` types, templates, schema builders (with `@id` fix + proof fields), sitemap/robots. Gives a deployable site skeleton for any client.
+3. **Unified QA gate** (S/M) — config-driven copy-qa + render-audit. Needed before any generated content ships; also the seed of "measure."
+4. **M1 competitor discovery** (L, can ship semi-manual ⚙︎: scripted SERP pulls → human-assembled registry using the doc templates) — feeds everything downstream.
+5. **M2 keyword map + coded §18/§15 rules** (M) — depends on M1 SERP snapshots.
+6. **M4 feasibility scorer** (M) — pure rules over 1+4+5; do *before* M3 is fully automated (⚙︎ v0.1: hand-entered GBP gap numbers from manual exports satisfy its inputs).
+7. **M5 architecture generator** (L core, M for v0.1 subset: keyword→URL map + cannibalization + proof gates; defer crawl-diff/301 automation ⚙︎).
+8. **Task Plan (`plan.json`) + M8 minimal queue** (M) — even static generation closes the "specified but never built" hole; humans+agent execute against it.
+9. **M6 content generation through the gates** (M) → **M7 publish** (S) — pages live.
+10. **M9 minimal collectors** (M for minimal: GSC API + weekly DIY geo-grid scan + review-count snapshots into SQLite/CSV) — start collecting *the day pages ship* (indexation-latency clock).
+11. **M10 v0.1 re-planner** (M for minimal: 4–5 highest-value rules — indexation check, position-8–15 depth task, cannibalization detect, review-gap trend, proof-unblock auto-queue — run weekly, emitting plan amendments).
+
+**Critical-path shape:** 1→2→3 (parameterization, ~all salvage) can proceed while 4→5→6→7 (automation) is built; 8 joins them; 9–11 (loop) only needs 8's plan + 10's data and *must* start collecting at first publish. The two items that can silently blow the schedule are external: GBP API approval and indexation latency (8–16 wks) — which is why v0.1's loop rule #1 is the indexation check, not a rank rule.
